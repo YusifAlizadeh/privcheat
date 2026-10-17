@@ -164,3 +164,7 @@ wants (each script warns and continues instead of dying).
 - `nuclei` needs its templates from the internet (`nuclei -update-templates`);
   treat it as an online-only tool.
 - Methodology files are in Russian; scripts and this README are in English.
+- Team notes and knowledge sharing live on a **Notion page per challenge** in the
+  shared team space; `notes.md` (scaffolded by `ctf-init`) is only the offline
+  buffer for when Notion is unreachable. The repo ships no Notion tooling — it is
+  a docs-only convention.

@@ -10,7 +10,7 @@
 #   ├── files/     # challenge artifacts (download them here)
 #   ├── loot/      # tool output; enum-*.sh write here automatically
 #   ├── scripts/   # your solve/exploit scripts
-#   └── notes.md   # running notes template (RU)
+#   └── notes.md   # offline notes buffer (RU); live notes go on the Notion page
 #
 # Inside the workspace, CTF_LOOT_DIR defaults to ./loot, so:
 #   enum-net <ip>      -> loot/<ip>/net/<ts>/
@@ -26,6 +26,9 @@ usage() {
 Usage: ctf-init <challenge-name> [-d DIR]
 
 Creates a challenge workspace: files/, loot/, scripts/, notes.md.
+
+Live team notes go on the challenge's page in the shared Notion space;
+notes.md is only the offline buffer for when Notion is unreachable.
 
   -d DIR   parent directory (default: current directory)
   -h       this help
@@ -53,6 +56,10 @@ mkdir -p "$WS/files" "$WS/loot" "$WS/scripts"
 cat >"$WS/notes.md" <<EOF
 # $NAME
 
+> Оффлайн-буфер. Живые заметки команды — на странице задания в Notion
+> (тот же скелет). Веди этот файл, только если Notion недоступен, и
+> перенеси записи на страницу, как появится связь.
+
 - **Категория:** 
 - **Формат флага:** (напр. \`flag{...}\`, \`CTF{...}\`)
 - **Файлы / цель:** 
@@ -66,8 +73,11 @@ cat >"$WS/notes.md" <<EOF
 ## Находки (по одной строке, важно для райтапа)
 - 
 
-## Идеи и тупики
+## Тупики
 - 
+
+## Цепочка до флага
+- параметр → payload → ответ
 
 ## Итог
 - Флаг: 
@@ -89,5 +99,6 @@ cat <<EOF
   enum-bin  files/chall
   enum-file files/suspect.bin
 
-  Вывод инструментов попадёт в loot/, заметки веди в notes.md.
+  Вывод инструментов попадёт в loot/.
+  Заметки команды веди на странице задания в Notion; notes.md — оффлайн-буфер.
 EOF

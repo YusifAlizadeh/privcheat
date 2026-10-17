@@ -37,13 +37,15 @@ Offline CTF box:
 ## How to work a challenge
 
 1. `ctf-init <name>` — one folder per task (`files/ loot/ scripts/ notes.md`).
+   Live notes go on the team's Notion page for the challenge; `notes.md` is the
+   offline buffer.
 2. Read `setup/methodology/00-start.md` (first 10 minutes checklist).
 3. Triage with the matching `enum-*` script; it saves raw output + a summary
    under `loot/` automatically.
 4. Follow the category runbook in `setup/methodology/` and the commands in
    `CTF_CHEATSHEET.md`.
-5. Keep the solve script in `scripts/` and the chain in `notes.md` — the
-   write-up writes itself.
+5. Keep the solve script in `scripts/` and the chain on the challenge's page in
+   the shared Notion space — the write-up writes itself.
 
 ## Principles
 
